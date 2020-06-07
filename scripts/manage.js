@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, function(data) {
         console.log(data.blockList);
 
-        globalList = data.blockList;
+        var globalList = data.blockList;
         setInitialList()
 
         document.getElementById("newUrlButton").addEventListener("click", changeText2);
@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (globalItem.endsWith("remove")) {
                 globalItem = globalItem.slice(0, -6);
             }
-            console.log(globalItem);
             globalList = globalList.filter(item => item !== globalItem);
             console.log(globalList);
             updateGlobalList(globalList);

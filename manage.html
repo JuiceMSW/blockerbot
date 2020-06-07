@@ -24,7 +24,7 @@
 
     function setInitialList(){
         for (var i = 0; i < globalList.length; i++) {
-              append(list[i]);
+              append(globalList[i]);
         }
     }
 
@@ -32,6 +32,7 @@
         var newUrl = document.getElementById('newUrl').value;
         append(newUrl, 0)
         globalList.push(newUrl)
+        updateGlobalList()
        
     }
     function append(url, index){
@@ -45,16 +46,22 @@
         entry.appendChild(removeButton);
         docList.appendChild(entry)
         lastid += 1;
-
-
     }
 
     function updateGlobalList(){
-
+        
     }
 
     function removeName(itemid) {
         var item = document.getElementById(itemid);
-        list.removeChild(item);
+        docList.removeChild(item);
+        var globalItem = item.textContent
+        if (globalItem.endsWith("remove")) {
+            globalItem = globalItem.slice(0, -6)
+        }
+        console.log(globalItem)
+        globalList = globalList.filter(item => item !== globalItem);
+        console.log(globalList)
+        updateGlobalList()
     }
 </script>

@@ -2,11 +2,25 @@ function block() {
     var url;
     chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
         url = arrayOfTabs[0].url;
+        console.log(url);
+        chrome.storage.sync.get({
+            blockList:[]
+        }, function(data) {
+            console.log(data.blockList);
+            update(data.blockList, url);
+        });
     });
 
-    
-
     redirect();
+}
+
+function update(list, url) {
+    list.push(url);
+    chrome.storage.sync.set({
+        blockList:list
+    }, function() {
+        console.log("Added '" + url + "' to block list");
+    });
 }
 
 function redirect() {

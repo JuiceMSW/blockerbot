@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var newUrl = document.getElementById('newUrl').value;
             append(newUrl, 0)
             globalList.push(newUrl)
-            updateGlobalList()
+            updateGlobalList(globalList)
         }
 
         function append(url, index){

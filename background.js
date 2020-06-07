@@ -8,6 +8,9 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
     urls : ["*://*.facebook.com/"]
     }, ["blocking"]);
 
+
+
+    
 chrome.runtime.onInstalled.addListener(function() {
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
         chrome.declarativeContent.onPageChanged.addRules([{

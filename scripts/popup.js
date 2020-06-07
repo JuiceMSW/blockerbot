@@ -30,6 +30,14 @@ function redirect() {
     });
 }
 
+function manage() {
+    chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
+        var code = 'window.open(chrome.extension.getURL("manage.html"), \'_blank\');';
+        chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("block").addEventListener("click", block);
-})
+    document.getElementById("manage").addEventListener("click", manage);
+});

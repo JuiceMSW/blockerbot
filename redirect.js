@@ -5,8 +5,8 @@ chrome.storage.sync.get({
 }, function(data) {
     console.log(data.blockList);
     list = data.blockList;
-    var url = window.location.href;
-    if (list.includes(url)) {
+    var url = new URL(window.location.href);
+    if (list.includes(url.href) || list.includes(url.origin)) {
         window.location.replace(chrome.extension.getURL("default.html"));
     }
 });

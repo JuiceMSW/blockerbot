@@ -1,7 +1,9 @@
 function block() {
     var url;
     chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
-        url = arrayOfTabs[0].url;
+        url = new URL(arrayOfTabs[0].url);
+        url = url.href.replace(/\/+$/, "");
+
         console.log(url);
         chrome.storage.sync.get({
             blockList:[]

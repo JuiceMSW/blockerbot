@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function changeText2() {
             var newUrl = document.getElementById('newUrl').value;
-            append(newUrl, 0)
-            globalList.push(newUrl)
-            updateGlobalList(globalList)
+            newUrl = new URL(newUrl);
+            newUrl = newUrl.href.replace(/\/+$/, "");
+            append(newUrl, 0);
+            globalList.push(newUrl);
+            updateGlobalList(globalList);
         }
 
         function append(url, index){
-        
             var entry = document.createElement('li');
             entry.appendChild(document.createTextNode(url));
             entry.setAttribute('id', 'item' + lastid);

@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             entry.setAttribute('id', 'item' + lastid);
             var removeButton = document.createElement('button');
             removeButton.appendChild(document.createTextNode("remove"));
+            removeButton.classList.add("removeButton");
             removeButton.addEventListener("click", function() {
                 var arg = entry.getAttribute('id');
                 console.log(arg);

@@ -4,7 +4,7 @@ BlockerBot is a Chrome extension that lets users block certain sites to prevent 
 
 It can be installed by clicking here:
 
-## User guide
+### User guide
 
 Sites can be blocked in two ways. By clicking on the extension icon in the toolbar and selecting "Block this Site", you can automatically add the URL of the site you're on to the blocked list. You can also add sites one after another by selecting "Manage Block List", entering a full URL in, and pressing submit. You can also view and remove sites from your blocked list on this page.
 

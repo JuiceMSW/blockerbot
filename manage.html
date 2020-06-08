@@ -1,15 +1,43 @@
 <html>
-    <head>
-        <script src="scripts/manage.js"></script>
-    </head>
-<h1>Manage your blocked sites</h1>
-<h3>Enter a new site to block</h3>
-<input type="text" id="newUrl">
-<br>
-<input type='button' id="newUrlButton" value='Submit' />
 
-<h2>Your blocked sites:</h2>
-<ol id="demo"></ol>
+<head>
+    <script src="scripts/manage.js"></script>
+</head>
+<body>
+    <div class = "outerDiv">
+        <div class = "innerDiv">
+            <h1 style="font-size:40px;">Manage Your Blocked Sites</h1>
+
+            <h2>Enter a new site to block</h3>
+            <h4>Do not forget the 'https://www' or 'http://www' at the start of the url</h4>
+            <input type="text" id="newUrl">
+            <br>
+            <input style="margin-top: 20px;" type='button' id="newUrlButton" value='Submit' />
+            <br>
+            <br>
+            <h2>Your blocked sites:</h2>
+            <ul style="list-style: none;" id="demo"></ul>
+
+        </div>
+    </div>
+</body>
+
+
 
 
 </html>
+
+<style>
+    .outerDiv{
+        text-align: center
+    }
+   .innerDiv{
+    display: inline-block
+   }
+   body{
+       background-color: #f0f0f0;
+   }
+   .removeButton{
+       margin-left: 20px;
+   }
+</style>
